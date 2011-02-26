@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  asset_tag: MyString
+  serial_number: MyString
+  purchase_date: 2011-02-27
+  purchase_cost: 9.99
+  warranty_length_year: 1
+  warranty_length_month: 1
+
+two:
+  asset_tag: MyString
+  serial_number: MyString
+  purchase_date: 2011-02-27
+  purchase_cost: 9.99
+  warranty_length_year: 1
+  warranty_length_month: 1

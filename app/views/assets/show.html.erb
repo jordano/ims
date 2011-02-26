@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Asset tag:</b>
+  <%= @asset.asset_tag %>
+</p>
+
+<p>
+  <b>Serial number:</b>
+  <%= @asset.serial_number %>
+</p>
+
+<p>
+  <b>Purchase date:</b>
+  <%= @asset.purchase_date %>
+</p>
+
+<p>
+  <b>Purchase cost:</b>
+  <%= @asset.purchase_cost %>
+</p>
+
+<p>
+  <b>Warranty length year:</b>
+  <%= @asset.warranty_length_year %>
+</p>
+
+<p>
+  <b>Warranty length month:</b>
+  <%= @asset.warranty_length_month %>
+</p>
+
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>

@@ -21,4 +21,19 @@ Ims::Application.routes.draw do
 
   end
 
+  resources :tasks, :only => :index
+  namespace :tasks do
+
+    resources :tickets
+
+    resources :settings, :only => :index
+    namespace :settings do
+
+      resources :task_categories
+      resources :task_subcategories
+
+    end
+
+  end
+
 end

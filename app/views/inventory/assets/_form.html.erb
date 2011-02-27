@@ -19,7 +19,7 @@
       <%= f.label :serial_number %><br />
       <%= f.text_field :serial_number %>
     </div>
-    <div>
+    <div class="field">
       <%= f.label :model_id %><br />
       <%= f.collection_select :model_id, ModelType.all, :id, :name, :prompt => "Select Model Type" %>
     </div>

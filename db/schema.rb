@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227033433) do
+ActiveRecord::Schema.define(:version => 20110227062406) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_tag"
@@ -48,6 +48,34 @@ ActiveRecord::Schema.define(:version => 20110227033433) do
   create_table "subcategories", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_subcategories", :force => true do |t|
+    t.string   "name"
+    t.integer  "task_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "status"
+    t.string   "priority"
+    t.date     "due_date"
+    t.integer  "task_category_id"
+    t.integer  "task_subcategory_id"
+    t.string   "requested_by"
+    t.string   "contact_number"
+    t.string   "issued_to"
+    t.string   "subject"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

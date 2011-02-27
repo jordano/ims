@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226160118) do
+ActiveRecord::Schema.define(:version => 20110227033433) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_tag"
@@ -19,6 +19,35 @@ ActiveRecord::Schema.define(:version => 20110226160118) do
     t.decimal  "purchase_cost"
     t.integer  "warranty_length_year"
     t.integer  "warranty_length_month"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "model_id"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manufacturers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "model_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
+    t.integer  "manufacturer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subcategories", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

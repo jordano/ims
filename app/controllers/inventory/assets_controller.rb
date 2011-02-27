@@ -1,4 +1,4 @@
-class AssetsController < ApplicationController
+class Inventory::AssetsController < ApplicationController
   # GET /assets
   # GET /assets.xml
   def index
@@ -44,7 +44,7 @@ class AssetsController < ApplicationController
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to(@asset, :notice => 'Asset was successfully created.') }
+        format.html { redirect_to(inventory_asset_path(@asset), :notice => 'Asset was successfully created.') }
         format.xml  { render :xml => @asset, :status => :created, :location => @asset }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class AssetsController < ApplicationController
 
     respond_to do |format|
       if @asset.update_attributes(params[:asset])
-        format.html { redirect_to(@asset, :notice => 'Asset was successfully updated.') }
+        format.html { redirect_to(inventory_asset_path(@asset), :notice => 'Asset was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class AssetsController < ApplicationController
     @asset.destroy
 
     respond_to do |format|
-      format.html { redirect_to(assets_url) }
+      format.html { redirect_to(inventory_assets_path) }
       format.xml  { head :ok }
     end
   end

@@ -1,0 +1,48 @@
+<%= form_for([:inventory, @asset]) do |f| %>
+    <% if @asset.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+          <ul>
+            <% @asset.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :asset_tag %><br />
+      <%= f.text_field :asset_tag %>
+    </div>
+    <div class="field">
+      <%= f.label :serial_number %><br />
+      <%= f.text_field :serial_number %>
+    </div>
+    <div>
+      <%= f.label :model_id %><br />
+      <%= f.collection_select :model_id, ModelType.all, :id, :name, :prompt => "Select Model Type" %>
+    </div>
+    <div class="field">
+      <%= f.label :purchase_date %><br />
+      <%= f.date_select :purchase_date, :order =>[:day, :month, :year], :start_year => 2000, :end_year => Time.now.year %>
+    </div>
+    <div class="field">
+      <%= f.label :purchase_cost %><br />
+      <%= f.text_field :purchase_cost %>
+    </div>
+    <div>
+      <em>Warranty</em>
+      <div class="field">
+        <%= f.label :warranty_length_year, "Year(s)" %><br />
+        <%= f.select :warranty_length_year, 1..10, {:include_blank => true} %>
+      </div>
+      <div class="field">
+        <%= f.label :warranty_length_month, "Months(s)" %><br />
+        <%= f.select :warranty_length_month, 1..11, {:include_blank => true} %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

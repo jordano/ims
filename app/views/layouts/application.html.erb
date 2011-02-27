@@ -8,13 +8,48 @@
 </head>
 <body>
 
-<div>
-  <p><%= link_to "Dashboard", root_path %></p>
-  <p><%= link_to "Inventory", inventory_index_path %></p>
-  <p><%= link_to "Tasks", tasks_path %></p>
+<div id="header" class="container_12">
+
+  <div id="h_l" class="grid_6 ">
+    <p>Information Management System</p>
+  </div>
+
+  <div id="h_2" class="grid_6 ">
+    <p>Login information will go here.</p>
+  </div>
+
 </div>
 
-<%= yield %>
+<div id="subheader" class="container_12">
+
+  <div id="sh_1" class="grid_6 ">
+    <p>
+      <%= link_to "Dashboard", root_path %> |
+      <%= link_to "Inventory", inventory_index_path %> |
+      <%= link_to "Tasks", tasks_path %>
+    </p>
+  </div>
+
+</div>
+
+<div id="main" class="container_12">
+
+  <div class="grid_12">
+    <%= yield %>
+  </div>
+
+</div>
+
+<div id="footer" class="container_12">
+
+  <div class="grid_11">
+    <p>IMS open source project. Code hosted on <a href="https://github.com/jordano/ims">github</a>.</p>
+  </div>
+  <div class="grid_1">
+    <%= image_tag "icons/1298800573_HTML_Color_Black.png", :size => "48x48" %>
+  </div>
+
+</div>
 
 </body>
 </html>

@@ -1,25 +1,40 @@
-<h1>Assets</h1>
-
-<table>
-  <tr>
-    <th>Asset Tag</th>
-    <th>Serial Number</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @assets.each do |asset| %>
-  <tr>
-    <td><%= asset.asset_tag %></td>
-    <td><%= asset.serial_number %></td>
-    <td><%= link_to 'Show', inventory_asset_path(asset) %></td>
-    <td><%= link_to 'Edit', edit_inventory_asset_path(asset) %></td>
-    <td><%= link_to 'Destroy', inventory_asset_path(asset), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :title do %>
+    <h1>Assets</h1>
 <% end %>
-</table>
+<% content_for :info do %>
+    <div class="c_box">
+      <p>This section is for managing hardware based assets.</p>
+    </div>
+<% end %>
+<% content_for :alert do %>
+    <div class="b_box">
+      <p>This section hasn't been developed yet.</p>
+    </div>
+<% end %>
+<div>
+  <table class="at_i">
+    <tbody>
+    <tr class="at_i_h">
+      <th>Asset Tag</th>
+      <th>Serial Number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<br />
+    <% @assets.each do |asset| %>
+        <tr>
+          <td><%= asset.asset_tag %></td>
+          <td><%= asset.serial_number %></td>
+          <td><%= link_to 'Show', inventory_asset_path(asset) %></td>
+          <td><%= link_to 'Edit', edit_inventory_asset_path(asset) %></td>
+          <td><%= link_to 'Destroy', inventory_asset_path(asset), :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Asset', new_inventory_asset_path %>
+  <br />
+
+  <%= link_to 'New Asset', new_inventory_asset_path %>
+</div>

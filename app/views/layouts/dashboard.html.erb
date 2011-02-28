@@ -22,49 +22,28 @@
 
   <div id="subheader" class="grid_12">
     <div id="sh_1" class="grid_6 alpha">
-      <div>
-        <%= render 'shared/layouts/subheader' %>
-      </div>
+        <div>
+          <%= render 'shared/layouts/subheader' %>
+        </div>
     </div>
     <div id="sh_2" class="grid_6 omega">
     </div>
   </div>
-
   <div id="" class="grid_12 ">
-    <div class="brd_boxes">
-      <div class="brd_box">
-        <div>
-          <p>Breadcrumb navigation not implemented yet.</p>
-        </div>
-      </div>
-    </div>
     <div class="c_boxes">
-      <%= yield(:title) %>
-    </div>
-    <div class="c_boxes">
-      <%= yield(:info) %>
-    </div>
-    <div class="b_boxes">
-      <%= yield(:alert) %>
+      <%= yield %>
     </div>
   </div>
+  <div id="" class="grid_12 d_boxes">
+    <div class="grid_4 alpha d_box"><div><h6>Ticket Monitoring</h6></div></div>
+    <div class="grid_4 d_box"><div><h6>User Activity</h6></div></div>
+    <div class="grid_4 omega d_box"><div><h6>Notices</h6></div></div>
+  </div>
 
-  <div id="content" class="grid_12 e_boxes">
-
-    <div class="grid_10 alpha">
-      <div class="e_box">
-        <%= yield %>
-      </div>
-    </div>
-
-    <div id="sidebar" class="grid_2 omega">
-      <div class="e_box">
-        <div>
-          <p>Sidebar to be added.</p>
-        </div>
-      </div>
-    </div>
-
+  <div id="" class="grid_12 d_boxes">
+    <div class="grid_4 alpha d_box"><div><h6>Application Information</h6></div></div>
+    <div class="grid_4 d_box"><div><h6>Graph</h6></div></div>
+    <div class="grid_4 omega d_box"><div<h6>Extras</h6></div></div>
   </div>
 
 </div>

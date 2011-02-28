@@ -36,4 +36,6 @@ Ims::Application.routes.draw do
 
   end
 
+  resources :copyrights, :only => :index
+
 end

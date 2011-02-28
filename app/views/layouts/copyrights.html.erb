@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Information Management System</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div id="container" class="container_12">
+
+  <div id="header" class="grid_12">
+    <div id="h_l" class="grid_6 alpha">
+      <p>Information Management System</p>
+    </div>
+
+    <div id="h_2" class="grid_6 omega">
+      <%= render 'shared/layouts/account' %>
+    </div>
+  </div>
+
+  <div id="subheader" class="grid_12">
+    <div id="sh_1" class="grid_6 alpha">
+        <div>
+          <%= render 'shared/layouts/subheader' %>
+        </div>
+    </div>
+    <div id="sh_2" class="grid_6 omega">
+    </div>
+  </div>
+  <div id="" class="grid_12 ">
+    <div class="c_boxes">
+      <%= yield %>
+    </div>
+    <div class="b_boxes">
+        <%= yield(:alert) %>
+    </div>
+  </div>
+  <div id="" class="grid_12 d_boxes">
+    <div class="grid_6 alpha d_box">
+      <div>
+        <h6>Application License</h6>
+        <p>The source code for this application is hosted on github. Please fork it and modify to suit your own environment.</p>
+        <p>Not for commercial use. Share your changes and modifications.</p>
+      </div>
+    </div>
+    <div class="grid_6 omega d_box">
+      <div>
+        <h6>Icons</h6>
+        <p>Thanks to <a href="http://mebaze.com">mebaze</a>. Icon set <a href="http://mebaze.com/freebies/bunch-of-cool-bluish-icons">'bunch-of-cool-bluish-icons'</a>. Some colours have been modified for theme purposes.</p>
+        <p>HTML5 Logo provided by <a href="http://picons.me/">picons.me</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="" class="grid_12 d_boxes">
+    <div>
+
+    <div class="grid_6 alpha d_box">
+      <div class="d_box_title">
+        <h6>Plugins</h6>
+        <p>None yet.</p>
+      </div>
+    </div>
+    <div class="grid_6 omega d_box">
+      <div>
+        <h6>Extras.</h6>
+        <p>None yet.</p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="clearfix"></div>
+<%= render 'shared/layouts/footer' %>
+
+</body>
+</html>

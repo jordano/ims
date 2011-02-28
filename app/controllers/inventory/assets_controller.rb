@@ -27,7 +27,7 @@ class Inventory::AssetsController < ApplicationController
     @asset = Asset.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'forms' } # new.html.erb
       format.xml  { render :xml => @asset }
     end
   end
@@ -35,6 +35,8 @@ class Inventory::AssetsController < ApplicationController
   # GET /assets/1/edit
   def edit
     @asset = Asset.find(params[:id])
+
+    render :layout => 'forms'
   end
 
   # POST /assets
@@ -47,7 +49,7 @@ class Inventory::AssetsController < ApplicationController
         format.html { redirect_to(inventory_asset_path(@asset), :notice => 'Asset was successfully created.') }
         format.xml  { render :xml => @asset, :status => :created, :location => @asset }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => :new, :layout => 'forms' }
         format.xml  { render :xml => @asset.errors, :status => :unprocessable_entity }
       end
     end
@@ -63,7 +65,7 @@ class Inventory::AssetsController < ApplicationController
         format.html { redirect_to(inventory_asset_path(@asset), :notice => 'Asset was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :layout => 'forms' }
         format.xml  { render :xml => @asset.errors, :status => :unprocessable_entity }
       end
     end
